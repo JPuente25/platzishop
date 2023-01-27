@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/practico-react-typescript/static/css/main.b3eeeea7.css",
+    "main.js": "/practico-react-typescript/static/js/main.fc3484d3.js",
+    "index.html": "/practico-react-typescript/index.html",
+    "main.b3eeeea7.css.map": "/practico-react-typescript/static/css/main.b3eeeea7.css.map",
+    "main.fc3484d3.js.map": "/practico-react-typescript/static/js/main.fc3484d3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b3eeeea7.css",
+    "static/js/main.fc3484d3.js"
+  ]
+}

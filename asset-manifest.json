@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/platzishop/static/css/main.b3eeeea7.css",
+    "main.js": "/platzishop/static/js/main.bac25e41.js",
+    "index.html": "/platzishop/index.html",
+    "main.b3eeeea7.css.map": "/platzishop/static/css/main.b3eeeea7.css.map",
+    "main.bac25e41.js.map": "/platzishop/static/js/main.bac25e41.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b3eeeea7.css",
+    "static/js/main.bac25e41.js"
+  ]
+}

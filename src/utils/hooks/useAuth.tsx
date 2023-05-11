@@ -30,7 +30,7 @@ const useAuth = (userData: HookUserData | null) => {
                }
             });
             if (status < 300 && status >= 200) {
-               removeError('002');
+               removeError('NS8');
                setAuth(data); //MAIN DATA
                setLoading(false); //STOP LOADING
                setUserTokens(data);

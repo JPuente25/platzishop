@@ -6,7 +6,6 @@ import { GlobalStyle } from './styles/GlobalStyle';
 
 // @ts-ignore
 const root = ReactDOM.createRoot(document.getElementById('root'));
-console.log('hola')
 
 root.render(
    <Provider>

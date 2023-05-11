@@ -27,10 +27,8 @@ const useGetProducts = () => {
                setLoading(false); //STOP LOADING
             }
          } catch (e: any) {
-            console.log(e);
             setLoading(false); //STOP LOADING
             throw e
-            // setProducts(error); //MANAGE ERRORS
          }
       };
       getProducts();

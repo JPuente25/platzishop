@@ -36,7 +36,6 @@ const useGetUserSession = (userTokens: UserTokens) => {
                } else {
                   throw e;
                }
-               console.log(e);
             }
          }
       };

@@ -33,8 +33,6 @@ const useGetCategoryProducts = (id: number) => {
                setLoading(false); //LOADER
             }
          } catch (error) {
-            console.log(error)
-            // setCategoryProducts(error); //MANAGE ERRORS
             setLoading(false); //LOADER
          }
       };

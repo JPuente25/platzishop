@@ -1,7 +1,7 @@
 import React from 'react';
 import { ProductsProps, User, UserTokens } from '../../types';
 
-type ErrorProps = typeof errorCode
+type ErrorProps = typeof errorCode;
 type MsgsProps = typeof msgCode;
 
 interface Errors extends Partial<ErrorProps> {}
@@ -69,7 +69,7 @@ export const useInitialValue = (): UseContextProps => {
          ...state,
          modal: !state.modal,
       });
-      console.log(!state.modal)
+      console.log(!state.modal);
    };
 
    const toggleOrders = () => {
@@ -103,8 +103,8 @@ export const useInitialValue = (): UseContextProps => {
          userTokens: null,
          userData: null,
          modal: !state.modal,
-      })
-   }
+      });
+   };
 
    //ADDS AN ERROR
    const addError = (payload: string) => {
@@ -143,14 +143,13 @@ export const useInitialValue = (): UseContextProps => {
 };
 
 export const errorCode = {
-   '002': 'Usuario o clave invalidos',
-   'XL8': 'Este artículo no existe',
-   'FL1': 'Su sesión ha expirado. Por favor intente iniciar sesión de nuevo',
-   'XX5': 'Este usuario no está disponible para actualizar. Crea tu propio usuario.',
-   'NS8': 'Usuario y/o contrasena inválidos'
+   XL8: "This item doesn't exist",
+   FL1: 'Your session has expired. Please, log in again',
+   XX5: "This user can't be changed. Please create your own user",
+   NS8: 'User or password incorrect',
 };
 
 export const msgCode = {
-   'AA1': 'Usuario creado con exito. Probemoslo!',
-   'SS1': 'Datos actualizados con éxito'
+   AA1: 'Usuario creado con exito. Probemoslo!',
+   SS1: 'Datos actualizados con éxito',
 };

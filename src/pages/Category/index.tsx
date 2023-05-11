@@ -14,12 +14,10 @@ const Category = () => {
    const { state } = React.useContext(Context) as UseContextProps;
 
    const { categoryProducts, loading } = useGetCategoryProducts(categoryId);
-   // const error = categoryProducts?.name === 'AxiosError'; //CREATES ERROR MSG IF THERE IS ANY ERROR
 
    return (
       <StyledMain type='home'>
          {!state.error['XL8'] && <ArticleContainer products={categoryProducts} loading={loading}/>}
-         {/* {error && <p>{categoryProducts.message}</p>} */}
 
          {state.orders && <MyOrdersContainer>
             <MyOrders/>

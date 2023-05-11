@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { lg, md, sm, text_input_field, very_light_pink, white } from '../../styles/GlobalStyle';
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.div<{ type: string }>`
    position: relative;
    display: ${(props) => (props.type === 'order' ? 'flex' : 'block')};
    width: ${(props) => 
@@ -19,7 +19,7 @@ export const CardContainer = styled.div`
 `;
 
 
-export const CardImg = styled.img`
+export const CardImg = styled.img<{ type: string }>`
    width: ${(props) => 
                (props.type === 'order') 
                   ? '70px' 
@@ -46,7 +46,7 @@ export const CardImg = styled.img`
    }
 `;
 
-export const CardInfo = styled.div`
+export const CardInfo = styled.div<{ type: string }>`
    display: flex;
    flex-direction: ${(props) => 
                      (props.type === 'fullview') 
@@ -75,7 +75,7 @@ export const CardInfo = styled.div`
    }
 `;
 
-export const ParagraphContainer = styled.div`
+export const ParagraphContainer = styled.div<{ type: string }>`
    ${(props) =>
       (props.type === 'order')
          ? `display: flex;

@@ -13,7 +13,7 @@ const Article = () => {
    const { product, loading } = useGetProductById(parseInt(params.id!));
 
    return (
-      <StyledMain>
+      <StyledMain type='article'>
          {loading && <CardSkeleton type='fullview' />}
          {!state.error['XL8'] && !loading && <Card type='fullview' article={product!}/>}
          {state.error['XL8'] && <Navigate to='/' />}

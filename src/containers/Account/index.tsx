@@ -10,9 +10,8 @@ import { User } from '../../types';
 interface SignupData extends Pick<User, 'name' | 'email' | 'password'> {}
 
 interface AccountStates {
-   userData: SignupData | null
+   userData: SignupData | null;
 }
-
 
 //NOTA: LA API PARA CHECK SI UN EMAIL EXISTE NO FUNCIONA. ASI QUE SE HARA SIN ESTA VALIDACION
 const Account = () => {
@@ -20,9 +19,10 @@ const Account = () => {
 
    const { createUser, loading } = useCreateUser(userData); //CREATES USER WITH DATA OBTAINED FROM FORMULARY
 
-   const onCreateUser = (e: React.BaseSyntheticEvent<HTMLFormElement>) => { //SAVES DATA OBTAINED FROM FORMULARY
+   const onCreateUser = (e:  React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      //SAVES DATA OBTAINED FROM FORMULARY
       e.preventDefault();
-      const formData = new FormData(e.target);
+      const formData = new FormData((e.target as any).form);
       const data = {
          name: formData.get('name')!.toString(),
          email: formData.get('email')!.toString(),
@@ -32,31 +32,37 @@ const Account = () => {
    };
 
    return (
-         <div>
-            {createUser && <Navigate to='/login' />}
-            <H1 className='left'>My account</H1>
+      <div>
+         {createUser && <Navigate to='/login' />}
+         <H1 className='left'>My account</H1>
 
-            <Form onSubmit={(onCreateUser)}>
-               <div>
-                  <InputField 
-                     label={{text: 'Name', htmlFor: 'name'}}
-                     input={{type: 'text', placeholder: 'Michael'}}
-                  />
+         <Form>
+            <div>
+               <InputField
+                  label={{ text: 'Name', htmlFor: 'name' }}
+                  input={{ type: 'text', placeholder: 'Michael' }}
+               />
 
-                  <InputField 
-                     label={{text: 'Email', htmlFor: 'email'}}
-                     input={{type: 'email', placeholder: 'platzi@example.com'}}
-                  />
+               <InputField
+                  label={{ text: 'Email', htmlFor: 'email' }}
+                  input={{ type: 'email', placeholder: 'platzi@example.com' }}
+               />
 
-                  <InputField 
-                     label={{text: 'Password', htmlFor: 'password'}}
-                     input={{type: 'password', placeholder: '**********'}}
-                  />
-               </div>
+               <InputField
+                  label={{ text: 'Password', htmlFor: 'password' }}
+                  input={{ type: 'password', placeholder: '**********' }}
+               />
+            </div>
 
-               <Button type="submit" disabled={loading} className={'create'}>{loading ? 'Loading...' : 'Create'}</Button>
-            </Form>
-         </div>
+            <Button
+               type='submit'
+               disabled={loading}
+               onClick={onCreateUser}
+               className={'create'}>
+               {loading ? 'Loading...' : 'Create'}
+            </Button>
+         </Form>
+      </div>
    );
 };
 

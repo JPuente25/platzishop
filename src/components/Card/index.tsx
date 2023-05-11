@@ -53,8 +53,8 @@ const Card = ({ article, type }: Props) => {
    };
 
    //LOADS A DEFAULT IMAGE IS ANY IMAGE IS BROKEN OR NOT LOADING
-   const defaultImage = (e: React.BaseSyntheticEvent<HTMLImageElement>) =>{
-      e.target.src = 'https://t3.ftcdn.net/jpg/04/34/72/82/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg';
+   const defaultImage = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+      (e.target as any).src = 'https://t3.ftcdn.net/jpg/04/34/72/82/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg';
    }
 
    return (
@@ -87,14 +87,13 @@ const Card = ({ article, type }: Props) => {
                className="card"
                type={type}
                onClick={onCart}
-               added={articleAdded.toString()}>
+               added={articleAdded}>
                <CartIcon
                   width="25px"
                   height="25px"
                />
                {type === 'fullview' && (
                   <ButtonP
-                     added={articleAdded.toString()}
                      onClick={onCart}>
                      {articleAdded ? 'Delete from Cart' : 'Add to Cart'}
                   </ButtonP>

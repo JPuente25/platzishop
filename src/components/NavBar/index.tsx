@@ -67,7 +67,7 @@ export const NavBar = () => {
    
             <Container>
                <Email>platzi@example.com</Email>
-               <CartBox order="false" onClick={onOrders}>
+               <CartBox onClick={onOrders}>
                   <CartIcon height='30px' width='30px'/>
                   <Nots>{cartItems}</Nots>
                </CartBox>

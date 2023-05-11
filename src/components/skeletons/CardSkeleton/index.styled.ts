@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { very_light_pink } from '../../../styles/GlobalStyle';
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.div<{ type: string }>`
    position: relative;
    display: ${(props) => (props.type === 'order' ? 'flex' : 'block')};
    width: ${(props) =>
@@ -9,7 +9,7 @@ export const CardContainer = styled.div`
    border: ${(props) => (props.type === 'order' ? `1px solid ${very_light_pink}` : 'none')};
 `;
 
-export const ImgSkeleton = styled.div`
+export const ImgSkeleton = styled.div<{ type: string }>`
    width: ${(props) =>
       props.type === 'order' ? '70px' : props.type === 'fullview' ? '360px' : '240px'};
    height: ${(props) =>
@@ -18,7 +18,7 @@ export const ImgSkeleton = styled.div`
    border-radius: 20px;
 `;
 
-export const CardInfo = styled.div`
+export const CardInfo = styled.div<{ type: string }>`
    display: flex;
    flex-direction: ${(props) => (props.type === 'fullview' ? 'column' : 'row')};
    width: ${(props) => (props.type === 'order' ? '200px' : '100%')};
@@ -27,7 +27,7 @@ export const CardInfo = styled.div`
    align-items: center;
 `;
 
-export const ParagraphContainer = styled.div`
+export const ParagraphContainer = styled.div<{ type: string }>`
    ${(props) =>
       props.type === 'order'
          ? `display: flex;
@@ -44,7 +44,7 @@ export const ParagraphContainer = styled.div`
          : ``}
 `;
 
-export const ParagraphSkeleton = styled.div`
+export const ParagraphSkeleton = styled.div<{ type?: string }>`
    width: ${(props) => (props.type === 'order' ? '40px' : '180px')};
    height: 16px;
    background-color: ${very_light_pink};
@@ -67,7 +67,7 @@ export const CloseIconContainer = styled.div`
    height: 30px;
 `;
 
-export const CartBoxSkeleton = styled.div`
+export const CartBoxSkeleton = styled.div<{ type: string }>`
    ${(props) =>
       props.type === 'card'
          ? `width: 40px;

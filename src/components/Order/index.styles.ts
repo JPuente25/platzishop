@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { lg, md, sm, text_input_field, very_light_pink } from "../../styles/GlobalStyle";
+import { lg, sm, text_input_field, very_light_pink } from "../../styles/GlobalStyle";
 
-export const OrderContainer = styled.div` 
+export const OrderContainer = styled.div<{type?: string}>` 
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -61,7 +61,7 @@ export const ArticlesContainer = styled.div`
    gap: 24px;
 `;
 
-export const More = styled.div`
+export const More = styled.div<{showMore: boolean}>`
    position: absolute;
    right: 0%;
    display: flex;
@@ -75,6 +75,6 @@ export const More = styled.div`
    cursor: pointer;
 
    p {
-      rotate: ${props => props.showMore === 'true' ? '90deg' : '0deg' };
+      rotate: ${props => props.showMore ? '90deg' : '0deg' };
    }
 `;

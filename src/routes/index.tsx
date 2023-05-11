@@ -21,8 +21,6 @@ const App = () => {
    const { state } = React.useContext(Context) as UseContextProps; //IMPORTED GLOBAL STATE
    const { loading } = useGetUserSession(state.userTokens); //LOADER WHILE CHECKING IF PERSISTED TOKENS ARE OK
    const persistedTokens: UserTokens = JSON.parse(localStorage.getItem('sale_user_session') || 'null'); //PERSISTED TOKENS
-   
-   console.log(state.modal);
 
    return (
       <HashRouter>

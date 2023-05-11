@@ -64,7 +64,7 @@ export const Email = styled.p`
    }
 `;
 
-export const CartBox = styled.div`
+export const CartBox = styled.div<{type?: string, added?: boolean}>`
    position: relative;
    display: ${props => (props.type === 'order') ? 'none' : 'flex'};
    justify-content: center;
@@ -75,7 +75,7 @@ export const CartBox = styled.div`
    height: ${props => (props.type === 'fullview') ? '50px' : '35px'};
 
    &.card {
-      background-color: ${props => props.added === 'true' ? 'orange' : hospital_green};
+      background-color: ${props => props.added ? 'orange' : hospital_green};
    }
 `;
 

@@ -63,13 +63,11 @@ export const useInitialValue = (): UseContextProps => {
    };
 
    const toggleModal = () => {
-      console.log(state.modal);
       //ENABLE MODAL TAB
       setState({
          ...state,
          modal: !state.modal,
       });
-      console.log(!state.modal);
    };
 
    const toggleOrders = () => {

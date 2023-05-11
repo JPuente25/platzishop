@@ -27,10 +27,10 @@ const Login = () => {
       navigate('/account/new');
    };
 
-   const handleSubmit = (e: React.BaseSyntheticEvent<HTMLFormElement>) => {
+   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
       //SAVES FORM DATA IN STATE
       e.preventDefault();
-      const formData = new FormData(e.target);
+      const formData = new FormData((e.target as any).form);
       const data: LoginData = {
          email: formData.get('email')!.toString(),
          password: formData.get('password')!.toString(),
@@ -68,7 +68,7 @@ const Login = () => {
    if (state.error['FL1']) invalidTokenWarning();
 
    return (
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={e => e.preventDefault}>
          <ToastContainer />
          <InputField
             label={{ text: 'Email Address', htmlFor: 'email' }}
@@ -80,11 +80,11 @@ const Login = () => {
             input={{ type: 'password', placeholder: '***********' }}
          />
 
-         <Button>Log In</Button>
-         <ForgotLink to="/recovery/sent">Forgot my password</ForgotLink>
+         <Button type='submit' onClick={handleSubmit}>Log In</Button>
+         <ForgotLink to='/recovery/sent'>Forgot my password</ForgotLink>
 
          <Button
-            className="signup"
+            className='signup'
             onClick={goSignup}>
             Sign up
          </Button>

@@ -23,7 +23,7 @@ const ExistingAccount = () => {
 
    const { loading } = useUpdateUser(newData); //UPDATES AN USER GIVEN (HOOK API)
 
-   const handleSubmit = (e: React.BaseSyntheticEvent<HTMLFormElement>) => { //ON SUBMIT, SAVES DATA FROM FORMULARY TO STATE
+   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => { //ON SUBMIT, SAVES DATA FROM FORMULARY TO STATE
       e.preventDefault();
       setNewData(actualData);
    };

@@ -32,7 +32,7 @@ const Order = () => {
                <p>{qty} articles</p>
             </div>
                <p>${price}</p>
-               <More onClick={onShowMore} showMore={showMore.toString()}>
+               <More onClick={onShowMore} showMore={showMore}>
                   <p>{'>'}</p>
                </More>
          </Total>

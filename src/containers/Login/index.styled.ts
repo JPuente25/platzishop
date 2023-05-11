@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 export const Form = styled.form`
    display: grid;
    grid-template-rows: auto 1fr auto;
-   width: 300px;
+   width: 100%;
+   max-width: 300px;
 `;
 
 export const SignupButton = styled.button`
